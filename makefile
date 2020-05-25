@@ -13,14 +13,14 @@ LDFLAGS = -1m
 all: $(TARGET)
 
 $(TARGET): $(OBJS) $(HEADS)
-  $(CXXFLAGS) $(LDFLAGS) -o $@ $(OBJS)
+  $(CXX) $(LDFLAGS) -o $@ $(OBJS)
 
 run: all
   @./$(TARGET)
 
 .PHONY: depend clean
 depend:
-  $(CXXFLAGS) $(INCLUDES) -MM $(SRCS) > $(DEPS)
+  $(CXX) $(INCLUDES) -MM $(SRCS) > $(DEPS)
   @sed -i -E "s/^(.+?).o: ([^ ]+?)\1/\2\1.o: \2\1/g" $(DEPS)
 
 clean:
