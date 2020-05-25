@@ -3,11 +3,11 @@ TARGET = app
 SRCS  = $(shell find .src      -type f -name *.cpp)
 HEADS = $(shell find ./include -type f -name *.h)
 OBJS = $(SRCS:.cpp=.o)
-DEPS = Makedile.depend
+DEPS = Makefile.depend
 
 INCLUDES = -I.include
 CXXFLAGS = -O2 -Wall $(INCLUDES)
-LDFLAGS = 1m
+LDFLAGS = -1m
 
 all: $(TARGET)
 
