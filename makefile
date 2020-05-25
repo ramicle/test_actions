@@ -9,6 +9,7 @@ INCLUDES = -I./include
 CXXFLAGS = -O2 -Wall $(INCLUDES)
 LDFLAGS = -1m
 
+
 all: $(TARGET)
 
 $(TARGET): $(OBJS) $(HEADS)
