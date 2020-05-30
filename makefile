@@ -6,7 +6,7 @@ OBJS = $(SRCS:.cpp=.o)
 DEPS = Makefile.depend
 
 INCLUDES = -I./include
-CXXFLAGS = -02 -Wall $(INCLUDES)
+CXXFLAGS = -O2 -Wall $(INCLUDES)
 LDFLAGS = -lm
 
 
@@ -19,7 +19,7 @@ run: all
   @./$(TARGET)
   
 .PHONY: depend clean
-depend
+depend:
   $(CXX) $(INCLUDES) -MM $(SRCS) > $(DEPS)
   @sed -i -E "s/^(.+?).o: ([^ ]+?)\1/\2\1.o: \2\1/g" $(DEPS)
   
